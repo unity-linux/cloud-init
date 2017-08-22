@@ -17,7 +17,7 @@ index b1fdd31..eabc67c 100644
              'templates_dir': '/etc/cloud/templates/',
          },
 -        'distro': 'ubuntu',
-+        'distro': 'mageia',
++        'distro': 'fedora',
      },
      'vendor_data': {'enabled': True, 'prefix': []},
  }
