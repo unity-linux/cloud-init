@@ -118,24 +118,24 @@ BuildRequires:  python3-setuptools
 BuildRequires:  systemd
 
 # For tests
-BuildRequires:  iproute
+BuildRequires:  iproute2
 BuildRequires:  python3-configobj
 # https://bugzilla.redhat.com/show_bug.cgi?id=1417029
-BuildRequires:  python3-httpretty >= 0.8.14-2
+#BuildRequires:  python3-httpretty >= 0.8.14-2
 BuildRequires:  python3-jinja2
 BuildRequires:  python3-jsonpatch
 BuildRequires:  python3-mock
 BuildRequires:  python3-nose
 BuildRequires:  python3-oauthlib
 BuildRequires:  python3-prettytable
-BuildRequires:  python3-pyserial
+BuildRequires:  python3-serial
 BuildRequires:  python3-PyYAML
 BuildRequires:  python3-requests
 BuildRequires:  python3-six
 BuildRequires:  python3-unittest2
 
 Requires:       e2fsprogs
-Requires:       iproute
+Requires:       iproute2
 Requires:       libselinux-python3
 Requires:       net-tools
 Requires:       policycoreutils-python3
@@ -145,7 +145,7 @@ Requires:       python3-jinja2
 Requires:       python3-jsonpatch
 Requires:       python3-oauthlib
 Requires:       python3-prettytable
-Requires:       python3-pyserial
+Requires:       python3-serial
 Requires:       python3-PyYAML
 Requires:       python3-requests
 Requires:       python3-six
