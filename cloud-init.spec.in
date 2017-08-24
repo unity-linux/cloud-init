@@ -33,7 +33,7 @@ Patch8:         cloud-init-0.7.8-apt-dns-test.patch
 
 # Do not write NM_CONTROLLED=no in generated interface config files
 # https://bugzilla.redhat.com/show_bug.cgi?id=1385172
-Patch11:        cloud-init-0.7.8-nm-controlled.patch
+##Patch11:        cloud-init-0.7.8-nm-controlled.patch
 
 # Disable tests that require pylxd
 Patch12:        cloud-init-0.7.9-disable-lxd-tests.patch
@@ -43,18 +43,18 @@ Patch12:        cloud-init-0.7.9-disable-lxd-tests.patch
 # Fix systemd dependency cycle with cloud-init and multi-user.target
 # https://bugzilla.redhat.com/show_bug.cgi?id=1428492
 # https://bugzilla.redhat.com/show_bug.cgi?id=1430511
-Patch13:        cloud-init-0.7.9-systemd-cloud-init.patch
+##Patch13:        cloud-init-0.7.9-systemd-cloud-init.patch
 
 # Fix systemd dependency cycle with cloud-final and os-collect-config
 # https://bugzilla.redhat.com/show_bug.cgi?id=1420946
 # https://bugzilla.redhat.com/show_bug.cgi?id=1428492
-Patch14:        cloud-init-0.7.9-systemd-cloud-final.patch
+##Patch14:        cloud-init-0.7.9-systemd-cloud-final.patch
 
 # Fix errors in network sysconfig handling
 # https://bugzilla.redhat.com/show_bug.cgi?id=1389530
 # https://bugs.launchpad.net/cloud-init/+bug/1665441
 # https://git.launchpad.net/cloud-init/commit/?id=f81d6c7bde2af206d449de593b35773068270c84
-#Patch15:        cloud-init-0.7.9-sysconfig-iface.patch
+##Patch15:        cloud-init-0.7.9-sysconfig-iface.patch
 
 # Make > 3 name servers a warning, not a fatal error
 # This is useful when both IPv4 and IPv6 name servers are present.
@@ -65,14 +65,14 @@ Patch16:        cloud-init-0.7.9-gt3-nameservers.patch
 # Fix IPv6 gateways in network sysconfig
 # https://bugs.launchpad.net/cloud-init/+bug/1669504
 # https://git.launchpad.net/cloud-init/commit/?id=1d751a6f46f044e3c3827f3cef0e4a2e71d50fe7
-Patch17:        cloud-init-0.7.9-ipv6-gateway.patch
+##Patch17:        cloud-init-0.7.9-ipv6-gateway.patch
 
 # Order cloud-init.service after network.service and NetworkManager.service
 # cloud-init.service is meant to run when networking is up, but before
 # network-online.target unleashes other services in case people want to
 # set up networking customizations that run before those services do.
 # https://bugzilla.redhat.com/show_bug.cgi?id=1400249
-#Patch18:        cloud-init-0.7.9-before-network-target.patch
+##Patch18:        cloud-init-0.7.9-before-network-target.patch
 
 # Do not cache IAM instance profile credentials on disk
 # https://bugs.launchpad.net/cloud-init/+bug/1638312
@@ -84,25 +84,25 @@ Patch19:        cloud-init-0.7.9-credcache.patch
 # https://bugs.launchpad.net/cloud-init/+bug/1675571
 # https://git.launchpad.net/cloud-init/commit/?id=5442b517ebe5508159a46d11d500fbc6ad854ba0
 # https://git.launchpad.net/cloud-init/commit/?id=493f6c3e923902d5d4f3d87e1cc4c726ea90ada4
-Patch20:        cloud-init-0.7.9-digitalocean-loopback.patch
+##Patch20:        cloud-init-0.7.9-digitalocean-loopback.patch
 
 # Configure all NICs presented in DigitalOcean metadata
 # https://bugzilla.redhat.com/show_bug.cgi?id=1442463
 # https://git.launchpad.net/cloud-init/commit/?id=ff44056771416cb811879b13b97f88d8f2057071
-Patch21:        cloud-init-0.7.9-digitalocean-all-nics.patch
+##Patch21:        cloud-init-0.7.9-digitalocean-all-nics.patch
 
 # Make DigitalOcean use interface indexes, not names, to choose which one
 # to assign the link-local address used for metadata
 # https://bugzilla.redhat.com/show_bug.cgi?id=1442463
 # https://git.launchpad.net/cloud-init/commit/?id=dad97585be0f30202a5a351800f20d4432b94694
-Patch22:        cloud-init-0.7.9-digitalocean-ifindex.patch
+##Patch22:        cloud-init-0.7.9-digitalocean-ifindex.patch
 
 # Resolve a conflict between cloud-init and NetworkManager writing resolv.conf
 # https://bugzilla.redhat.com/show_bug.cgi?id=1454491
 # https://bugzilla.redhat.com/show_bug.cgi?id=1461959
 # https://bugs.launchpad.net/cloud-init/+bug/1693251
 # https://git.launchpad.net/cloud-init/commit/?id=67bab5bb804e2346673430868935f6bbcdb88f13
-#Patch23:        cloud-init-0.7.9-nm-resolvconf.patch
+##Patch23:        cloud-init-0.7.9-nm-resolvconf.patch
 
 # Fix broken fs_setup cmd option handling
 # https://bugs.launchpad.net/cloud-init/+bug/1687712
