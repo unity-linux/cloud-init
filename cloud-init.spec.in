@@ -54,7 +54,7 @@ Patch14:        cloud-init-0.7.9-systemd-cloud-final.patch
 # https://bugzilla.redhat.com/show_bug.cgi?id=1389530
 # https://bugs.launchpad.net/cloud-init/+bug/1665441
 # https://git.launchpad.net/cloud-init/commit/?id=f81d6c7bde2af206d449de593b35773068270c84
-Patch15:        cloud-init-0.7.9-sysconfig-iface.patch
+#Patch15:        cloud-init-0.7.9-sysconfig-iface.patch
 
 # Make > 3 name servers a warning, not a fatal error
 # This is useful when both IPv4 and IPv6 name servers are present.
@@ -72,7 +72,7 @@ Patch17:        cloud-init-0.7.9-ipv6-gateway.patch
 # network-online.target unleashes other services in case people want to
 # set up networking customizations that run before those services do.
 # https://bugzilla.redhat.com/show_bug.cgi?id=1400249
-Patch18:        cloud-init-0.7.9-before-network-target.patch
+#Patch18:        cloud-init-0.7.9-before-network-target.patch
 
 # Do not cache IAM instance profile credentials on disk
 # https://bugs.launchpad.net/cloud-init/+bug/1638312
@@ -102,7 +102,7 @@ Patch22:        cloud-init-0.7.9-digitalocean-ifindex.patch
 # https://bugzilla.redhat.com/show_bug.cgi?id=1461959
 # https://bugs.launchpad.net/cloud-init/+bug/1693251
 # https://git.launchpad.net/cloud-init/commit/?id=67bab5bb804e2346673430868935f6bbcdb88f13
-Patch23:        cloud-init-0.7.9-nm-resolvconf.patch
+#Patch23:        cloud-init-0.7.9-nm-resolvconf.patch
 
 # Fix broken fs_setup cmd option handling
 # https://bugs.launchpad.net/cloud-init/+bug/1687712
