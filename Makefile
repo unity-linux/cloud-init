@@ -1,5 +1,5 @@
 NAME=cloud-init
-DISTREL=3
+REL=4
 VERSION=0.7.9
 
 RPMBUILD=$(shell which rpmbuild)
@@ -13,7 +13,7 @@ all:
 $(NAME).spec: $(NAME).spec.in
 	@$(CAT) $(NAME).spec.in | \
 		$(SED) -e 's,@VERSION@,$(VERSION),g' | \
-		$(SED) -e 's,@DISTREL@,$(DISTREL),g' \
+		$(SED) -e 's,@DISTREL@,$(REL),g' \
 			>$(NAME).spec
 	@echo
 	@echo "$(NAME).spec generated in $$PWD"

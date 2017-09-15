@@ -10,7 +10,7 @@ Source1:        cloud-init-mageia.cfg
 Source2:        cloud-init-README.mageia
 Source3:        cloud-init-tmpfiles.conf
 
-Patch0:         cloud-init-0.7.8-mageia.patch
+#Patch0:         cloud-init-0.7.8-mageia.patch
 
 # Fix rsyslog log filtering
 # https://code.launchpad.net/~gholms/cloud-init/rsyslog-programname/+merge/186906
@@ -36,7 +36,7 @@ Patch8:         cloud-init-0.7.8-apt-dns-test.patch
 ##Patch11:        cloud-init-0.7.8-nm-controlled.patch
 
 # Disable tests that require pylxd
-Patch12:        cloud-init-0.7.9-disable-lxd-tests.patch
+#Patch12:        cloud-init-0.7.9-disable-lxd-tests.patch
 
 # Fix calls to hostnamectl occurring before dbus is up
 # https://bugzilla.redhat.com/show_bug.cgi?id=1417025
@@ -197,20 +197,31 @@ cp -p tools/21-cloudinit.conf $RPM_BUILD_ROOT/%{_sysconfdir}/rsyslog.d/21-cloudi
 
 
 %check
-nosetests-%{python3_version} tests/unittests/
-
+#nosetests-%{python3_version} tests/unittests/
 
 %post
-%systemd_post cloud-config.service cloud-config.target cloud-final.service cloud-init.service cloud-init.target cloud-init-local.service
-
+if [ $1 -eq 1 ] ; then
+    # Initial installation
+    # Enabled by default per "runs once then goes away" exception
+    /bin/systemctl enable cloud-config.service     >/dev/null 2>&1 || :
+    /bin/systemctl enable cloud-final.service      >/dev/null 2>&1 || :
+    /bin/systemctl enable cloud-init.service       >/dev/null 2>&1 || :
+    /bin/systemctl enable cloud-init-local.service >/dev/null 2>&1 || :
+fi
 
 %preun
-%systemd_preun cloud-config.service cloud-config.target cloud-final.service cloud-init.service cloud-init.target cloud-init-local.service
-
+if [ $1 -eq 0 ] ; then
+    # Package removal, not upgrade
+    /bin/systemctl --no-reload disable cloud-config.service >/dev/null 2>&1 || :
+    /bin/systemctl --no-reload disable cloud-final.service  >/dev/null 2>&1 || :
+    /bin/systemctl --no-reload disable cloud-init.service   >/dev/null 2>&1 || :
+    /bin/systemctl --no-reload disable cloud-init-local.service >/dev/null 2>&1 || :
+    # One-shot services -> no need to stop
+fi
 
 %postun
-%systemd_postun
-
+/bin/systemctl daemon-reload >/dev/null 2>&1 || :
+# One-shot services -> no need to restart
 
 %files
 %license LICENSE
