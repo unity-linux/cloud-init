@@ -10,7 +10,7 @@ Source1:        cloud-init-mageia.cfg
 Source2:        cloud-init-README.mageia
 Source3:        cloud-init-tmpfiles.conf
 
-#Patch0:         cloud-init-0.7.8-mageia.patch
+Patch0:         cloud-init-0.7.8-mageia.patch
 
 # Fix rsyslog log filtering
 # https://code.launchpad.net/~gholms/cloud-init/rsyslog-programname/+merge/186906
@@ -253,27 +253,3 @@ fi
 
 
 %changelog
-* Wed Jul 26 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.7.9-8
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
-
-* Tue Jun 27 2017 Garrett Holmstrom <gholms@fedoraproject.org> - 0.7.9-7
-- Fixed broken sysconfig file writing on DigitalOcean [RH:1465440]
-
-* Wed Jun 21 2017 Garrett Holmstrom <gholms@fedoraproject.org> - 0.7.9-6
-- Fixed NameError in package module [RH:1447708]
-- Resolved a conflict between cloud-init and NetworkManager writing resolv.conf [RH:1454491 RH:1461959 LP:1693251]
-- Fixed broken fs_setup cmd option [LP:1687712]
-
-* Fri Apr 14 2017 Garrett Holmstrom <gholms@fedoraproject.org> - 0.7.9-5
-- Made DigitalOcean DNS server handling consistent with OpenStack [RH:1442463, LP:1675571]
-- Improved handling of multiple NICs on DigitalOcean [RH:1442463]
-- Assign link-local IPV4 addresses in DigitalOcean based on interface indexes [RH:1442463]
-
-* Tue Mar 14 2017 Garrett Holmstrom <gholms@fedoraproject.org> - 0.7.9-4
-- Fixed systemd dependency cycle with cloud-final and os-collect-config [RH:1420946, RH:1428492]
-- Fixed systemd dependency cycle with cloud-init and multi-user.target [RH:1428492, RH:1430511]
-- Fixed errors in network sysconfig handling [RH:1389530, LP:1665441]
-- Made > 3 name servers a warning, not a fatal error, unbreaking IPv6 setups [LP:1670052]
-- Fixed IPv6 gateways in network sysconfig [LP:1669504]
-- Ordered cloud-init.service after network.service and NetworkManager.service [RH:1400249]
-
