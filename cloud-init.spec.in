@@ -72,7 +72,7 @@ Patch16:        cloud-init-0.7.9-gt3-nameservers.patch
 # network-online.target unleashes other services in case people want to
 # set up networking customizations that run before those services do.
 # https://bugzilla.redhat.com/show_bug.cgi?id=1400249
-##Patch18:        cloud-init-0.7.9-before-network-target.patch
+Patch18:        cloud-init-0.7.9-before-network-target.patch
 
 # Do not cache IAM instance profile credentials on disk
 # https://bugs.launchpad.net/cloud-init/+bug/1638312
