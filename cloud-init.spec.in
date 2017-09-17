@@ -48,7 +48,7 @@ Patch13:        cloud-init-0.7.9-systemd-cloud-init.patch
 # Fix systemd dependency cycle with cloud-final and os-collect-config
 # https://bugzilla.redhat.com/show_bug.cgi?id=1420946
 # https://bugzilla.redhat.com/show_bug.cgi?id=1428492
-Patch14:        cloud-init-0.7.9-systemd-cloud-final.patch
+##Patch14:        cloud-init-0.7.9-systemd-cloud-final.patch
 
 # Fix errors in network sysconfig handling
 # https://bugzilla.redhat.com/show_bug.cgi?id=1389530
