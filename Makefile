@@ -1,5 +1,5 @@
 NAME=cloud-init
-REL=8
+REL=9
 VERSION=0.7.9
 
 RPMBUILD=$(shell which rpmbuild)
