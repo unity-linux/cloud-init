@@ -146,7 +146,7 @@ Requires:       python3-jsonpatch
 Requires:       python3-oauthlib
 Requires:       python3-prettytable
 Requires:       python3-serial
-Requires:       python3-PyYAML
+Requires:       python3-pyaml
 Requires:       python3-requests
 Requires:       python3-six
 Requires:       shadow-utils
